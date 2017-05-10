@@ -64,10 +64,10 @@
             </div>
         </nav>
 
-        <div id="main">
+        <div id ="main" >
             <h2>Paint</h2>
 
-            <canvas id="mycanvas" >
+            <canvas id="mycanvas" width="800" height="600" ></canvas>
         </div>
         <script src="js/scripts.js"></script>
     </body>

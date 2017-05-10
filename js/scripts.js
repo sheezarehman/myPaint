@@ -54,29 +54,31 @@ $( document ).ready(function() {
     });
 
     function Online(){
-        ctx.strokeStyle =color;
+        // ctx.strokeStyle =color;
         if(count == 0){
             saved.x=mouse.x;
             saved.y=mouse.y;
             count=1;
         }else{
+            ctx.strokeStyle = color;
             ctx.beginPath();
             ctx.moveTo(saved.x,saved.y);
             ctx.lineTo(mouse.x,mouse.y);
+
             ctx.stroke();
             count=0;
         }
     }
 
     function Oncircle(){
-        ctx.strokeStyle =color;
+        // ctx.strokeStyle =color;
         if (count == 0){
             saved.x=mouse.x;
             saved.y=mouse.y;
             count=1;
         }else {
             ctx.beginPath();
-            rad = Math.sqrt(Math.pow((mouse.x -saved.x), 2) + Math.pow((mouse.y -saved.y), 2));
+            var rad = Math.sqrt(Math.pow((mouse.x -saved.x), 2) + Math.pow((mouse.y -saved.y), 2));
             ctx.arc(saved.x,saved.y ,rad,0,2*Math.PI);
             if(filled == "true"){
                 ctx.fillStyle = color;
@@ -88,21 +90,8 @@ $( document ).ready(function() {
 
     }
 
-    function Ongomme(){
-        console.log('hjkjfbdkfjnedfkjsenfgkjsn');
-        // ctx.globalCompositeOperation = "destination-out";
-        ctx.strokeStyle = 'rgba(0,0,0,1.0)';
-        ctx.beginPath();
-        ctx.lineTo(mouse.x,mouse.y);
-        ctx.stroke();
-
-    }
-
-    function Onpen(){
-
-    }
     function Onrectangle(){
-        ctx.strokeStyle = $( "#color" ).val();
+        ctx.beginPath();
         if (count == 0){
             saved.x=mouse.x;
             saved.y=mouse.y;
@@ -117,6 +106,21 @@ $( document ).ready(function() {
             }
             count=0;
         }
+
+    }
+
+
+    function Ongomme(){
+        console.log('hjkjfbdkfjnedfkjsenfgkjsn');
+        // ctx.globalCompositeOperation = "destination-out";
+        ctx.strokeStyle = 'rgba(0,0,0,1.0)';
+        ctx.beginPath();
+        ctx.lineTo(mouse.x,mouse.y);
+        ctx.stroke();
+
+    }
+    function Onpen(){
+
 
     }
 

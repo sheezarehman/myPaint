@@ -19,3 +19,30 @@ body{
     border-color: #080808;
     height: 80px;
 }
+.icons {
+    background-image: url("../images/icons.png");
+    background-size: 480px 480px;
+}
+.pen{
+    background-position: 0 0;
+}
+.line{
+    background-position: -192px 0;
+}
+.circle{
+    background-position: -96px -32px;
+}
+.rectangle{
+    background-position: -32px -32px;
+}
+.eraser{
+    background-position: -64px 0;
+}
+
+.tools{
+    width: 32px;
+    height: 32px;
+}
+.navbar-nav li{
+    margin: 15px;
+}

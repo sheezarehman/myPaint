@@ -5,15 +5,22 @@ $( document ).ready(function() {
     var y;
     var timeout
     var count = 0;
+    var color="#000000";
 
 
     mycanvas.click(function( event ) {
+        mycanvas.css("cursor", "crosshair");
+    });
+
+    $( "#color" ).change(function() {
+        color = $( "#color" ).val();
     });
 
     mycanvas.mousemove(function(e){
         if(e.which==1) {
 
             var ctx = mycanvas[0].getContext("2d");
+            ctx.fillStyle=color;
             ctx.beginPath();
             ctx.fillRect( e.pageX  - this.offsetLeft , e.pageY - this.offsetTop, 1.5, 1.5);
             ctx.closePath();

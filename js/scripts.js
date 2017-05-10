@@ -22,8 +22,9 @@ $( document ).ready(function() {
     });
 
     $( "#color" ).change(function() {
+        console.log("old :"+color+ "new :"+$( "#color" ).val() );
         color = $( "#color" ).val();
-        ctx.strokeStyle = color;
+        ctx.strokeStyle = $( "#color" ).val();
         console.log("color changed");
     });
 
@@ -35,7 +36,7 @@ $( document ).ready(function() {
         console.log($(this).attr('id'));
         count=0;
         action = "On"+$(this).attr('id')+"()";
-        ctx.strokeStyle = $( "#color" ).val();
+        // ctx.globalCompositeOperation = "source-over";
 
     });
 
@@ -46,12 +47,13 @@ $( document ).ready(function() {
     });
 
     function Online(){
+        ctx.strokeStyle =color;
         if(count == 0){
             saved.x=mouse.x;
             saved.y=mouse.y;
             count=1;
         }else{
-
+            ctx.beginPath();
             ctx.moveTo(saved.x,saved.y);
             ctx.lineTo(mouse.x,mouse.y);
             ctx.stroke();
@@ -60,6 +62,7 @@ $( document ).ready(function() {
     }
 
     function Oncircle(){
+        ctx.strokeStyle =color;
         if (count == 0){
             saved.x=mouse.x;
             saved.y=mouse.y;
@@ -71,10 +74,8 @@ $( document ).ready(function() {
             if(filled == "true"){
                 ctx.fillStyle = color;
                 ctx.fill();
-                ctx.stroke();
-            }else{
-                ctx.stroke();
             }
+            ctx.stroke();
             count=0;
         }
 
@@ -82,7 +83,7 @@ $( document ).ready(function() {
 
     function Ongomme(){
         console.log('hjkjfbdkfjnedfkjsenfgkjsn');
-        ctx.globalCompositeOperation = "destination-out";
+        // ctx.globalCompositeOperation = "destination-out";
         ctx.strokeStyle = 'rgba(0,0,0,1.0)';
         ctx.beginPath();
         ctx.lineTo(mouse.x,mouse.y);
@@ -94,12 +95,14 @@ $( document ).ready(function() {
 
     }
     function Onrectangle(){
+        ctx.strokeStyle = $( "#color" ).val();
         if (count == 0){
             saved.x=mouse.x;
             saved.y=mouse.y;
             count=1;
         }else {
             if(filled == "true"){
+                ctx.fillStyle=color;
                 ctx.fillRect(saved.x,saved.y,(mouse.x -saved.x),(mouse.y -saved.y));
             }else{
                 ctx.rect(saved.x,saved.y,(mouse.x -saved.x),(mouse.y -saved.y));

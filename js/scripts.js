@@ -23,6 +23,8 @@ $( document ).ready(function() {
 
     $( "#color" ).change(function() {
         color = $( "#color" ).val();
+        ctx.strokeStyle = color;
+        console.log("color changed");
     });
 
     $( "#filled" ).change(function() {
@@ -33,13 +35,13 @@ $( document ).ready(function() {
         console.log($(this).attr('id'));
         count=0;
         action = "On"+$(this).attr('id')+"()";
+        ctx.strokeStyle = $( "#color" ).val();
 
     });
 
     mycanvas.click(function(e) {
         mouse.x = e.pageX - this.offsetLeft;
         mouse.y = e.pageY - this.offsetTop;
-        // console.log(action);
         eval(action);
     });
 
@@ -64,17 +66,13 @@ $( document ).ready(function() {
             count=1;
         }else {
             ctx.beginPath();
+            rad = Math.sqrt(Math.pow((mouse.x -saved.x), 2) + Math.pow((mouse.y -saved.y), 2));
+            ctx.arc(saved.x,saved.y ,rad,0,2*Math.PI);
             if(filled == "true"){
-                console.log(saved);
-                console.log(mouse);
-                rad = Math.sqrt(Math.pow((mouse.x -saved.x), 2) + Math.pow((mouse.y -saved.y), 2));
-                ctx.arc(saved.x,saved.y ,rad,0,2*Math.PI);
                 ctx.fillStyle = color;
                 ctx.fill();
                 ctx.stroke();
             }else{
-                rad = Math.sqrt(Math.pow((mouse.x -saved.x), 2) + Math.pow((mouse.y -saved.y), 2));
-                ctx.arc(saved.x,saved.y ,rad,0,2*Math.PI);
                 ctx.stroke();
             }
             count=0;
@@ -83,6 +81,12 @@ $( document ).ready(function() {
     }
 
     function Ongomme(){
+        console.log('hjkjfbdkfjnedfkjsenfgkjsn');
+        ctx.globalCompositeOperation = "destination-out";
+        ctx.strokeStyle = 'rgba(0,0,0,1.0)';
+        ctx.beginPath();
+        ctx.lineTo(mouse.x,mouse.y);
+        ctx.stroke();
 
     }
 
@@ -96,8 +100,6 @@ $( document ).ready(function() {
             count=1;
         }else {
             if(filled == "true"){
-                console.log(saved);
-                console.log(mouse);
                 ctx.fillRect(saved.x,saved.y,(mouse.x -saved.x),(mouse.y -saved.y));
             }else{
                 ctx.rect(saved.x,saved.y,(mouse.x -saved.x),(mouse.y -saved.y));

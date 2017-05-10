@@ -28,6 +28,13 @@ $( document ).ready(function() {
         console.log("color changed");
     });
 
+    $( "#size" ).change(function() {
+        console.log("size :"+$( "#size" ).val() );
+        widthLine = $( "#size" ).val();
+        ctx.lineWidth = $( "#size" ).val();
+        console.log("size of line changed");
+    });
+
     $( "#filled" ).change(function() {
         filled = $( "#filled" ).val();
     });

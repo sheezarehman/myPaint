@@ -38,7 +38,8 @@
                             </select>
                         </li>
 
-                        <li ><input type="color" name="favcolor" id="color"></li>
+                        <li ><input type="color" name="favcolor" id="color"/></li>
+                        <li><input id="size"  type="range" value="15" max="30" min="1"/></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#">Link</a></li>

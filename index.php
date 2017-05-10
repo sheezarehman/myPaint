@@ -26,15 +26,15 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li  id="pen" class="active  tools icons pen" title="pen"></li>
+                        <li  id="pen" class="  tools icons pen" title="pen"></li>
                         <li  id="gomme" class="active  tools icons eraser" title="gomme"></li>
                         <li  id="line" class="active  tools icons line" title="draw line"></li>
                         <li id="circle" class="active  tools icons circle" title="draw circle"></li>
                         <li  id="rectangle" class="active  tools icons rectangle" title="draw rectangle"></li>
                         <li class="dropdown">
                             <select class="form-control" id="filled">
-                                <option>rempli</option>
-                                <option>vide</option>
+                                <option value="true">rempli</option>
+                                <option value="false">vide</option>
                             </select>
                         </li>
 

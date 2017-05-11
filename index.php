@@ -42,17 +42,23 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li id="reset"><button type="button" class="btn btn-danger ">Reset</button></li>
                         <li ><a id="save" type="button" class="btn btn-info ">Save</a></li>
+                        <li></li>
                     </ul>
                 </div>
             </div>
         </nav>
 
+        <label class="custom-file pull-right" >
+            <input type="file" id="file" class="custom-file-input">
+            <span class="custom-file-control"></span>
+        </label>
         <div id ="main" >
             <h2>Paint</h2>
 
             <canvas id="mycanvas" width="800" height="600" ></canvas>
             
-            <img id="img"/>
+            <img id="image"/>
+
         </div>
         <script src="js/scripts.js"></script>
     </body>

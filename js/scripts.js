@@ -13,6 +13,7 @@ $( document ).ready(function() {
     var action = "Online()";
     var allowed=false;
     var count=0;
+    var fileImage;
 
 
 
@@ -25,10 +26,8 @@ $( document ).ready(function() {
     });
 
     $( "#color" ).change(function() {
-        console.log("old :"+color+ "new :"+$( "#color" ).val() );
         color = $( "#color" ).val();
         ctx.strokeStyle = $( "#color" ).val();
-        console.log("color changed");
     });
 
     $( "#size" ).change(function() {
@@ -40,8 +39,34 @@ $( document ).ready(function() {
         filled = $( "#filled" ).val();
     });
 
+
+    $( "#file" ).change(function(event) {
+        input = document.getElementById('file');
+        file = input.files[0];
+        var extenstion = file.name.split('.').pop();
+        if(extenstion== "png" || extenstion ==  "jpeg"){
+            console.log(file.name.split('.').pop());
+            fr = new FileReader();
+            fr.onload = createImage;
+            fr.readAsDataURL(file);
+        }else {
+            alert('not the right format');
+        }
+
+    });
+    function createImage() {
+        img = new Image();
+        img.onload = imageLoaded;
+        img.src = fr.result;
+    }
+
+    function imageLoaded() {
+        var canvas = document.getElementById("mycanvas")
+        var ctx = canvas.getContext("2d");
+        ctx.drawImage(img,0,0 );
+    }
+
     $( ".tools" ).click(function(e) {
-        console.log($(this).attr('id'));
         count=0;
         action = "On"+$(this).attr('id')+"()";
         $( ".tools" ).each(function( index ) {
@@ -51,17 +76,13 @@ $( document ).ready(function() {
         ctx.globalCompositeOperation="source-over";
     });
 
-
     $('#save').click( function(){
         downloadCanvas(this, 'mycanvas', 'myCanvas.png');
     });
 
-
     function downloadCanvas(link, canvasId, filename) {
-        console.log(link);
         link.href = document.getElementById(canvasId).toDataURL();
         link.download = filename;
-        console.log()
     }
 
 

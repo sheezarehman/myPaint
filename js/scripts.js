@@ -11,9 +11,11 @@ $( document ).ready(function() {
     ctx.lineWidth = widthLine;
     ctx.strokeStyle = color;
     var action = "Online()";
+    var allowed=false;
+
+
+
     var count=0;
-
-
 
     mycanvas.click(function( event ) {
         mycanvas.css("cursor", "crosshair");
@@ -27,10 +29,8 @@ $( document ).ready(function() {
     });
 
     $( "#size" ).change(function() {
-        console.log("size :"+$( "#size" ).val() );
         widthLine = $( "#size" ).val();
         ctx.lineWidth = $( "#size" ).val();
-        console.log("size of line changed");
     });
 
     $( "#filled" ).change(function() {
@@ -41,12 +41,11 @@ $( document ).ready(function() {
         console.log($(this).attr('id'));
         count=0;
         action = "On"+$(this).attr('id')+"()";
-
         $( ".tools" ).each(function( index ) {
                 $(this).removeClass( "active");
         });
         $(this ).addClass( "active" );
-
+        ctx.globalCompositeOperation="source-over";
     });
 
 
@@ -111,101 +110,45 @@ $( document ).ready(function() {
         }
     }
 
-
     function Ongomme(){
-        console.log('hjkjfbdkfjnedfkjsenfgkjsn');
-        // ctx.globalCompositeOperation = "destination-out";
-        ctx.strokeStyle = 'rgba(0,0,0,1.0)';
-        ctx.beginPath();
-        ctx.lineTo(mouse.x,mouse.y);
-        ctx.stroke();
-
+        if (allowed == true && action == "Ongomme()"){
+            ctx.globalCompositeOperation = "destination-out";
+            ctx.strokeStyle = 'rgba(0,0,0,1.0)';
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.stroke();
+        }
     }
     function Onpen(){
-
-
+        if (allowed == true && action == "Onpen()"){
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.stroke();
+        }
     }
 
+    mycanvas.mousemove(function(e) {
+        if(action == "Onpen()" || action == "Ongomme()" ) {
+        mouse.x = e.pageX - this.offsetLeft;
+        mouse.y = e.pageY - this.offsetTop;
+        }
+    });
 
+    mycanvas.mousedown(function(e) {
+        if(action == "Onpen()" || action == "Ongomme()" ) {
+            ctx.beginPath();
+            ctx.moveTo(mouse.x, mouse.y);
+            allowed = true;
+            if (action == "Onpen()"){
+                mycanvas.mousemove(Onpen);
+            }else{
+                mycanvas.mousemove(Ongomme);
+            }
+        }
+    });
 
-
-
-
-
-
-
-
-    // /* Mouse Capturing Work */
-    // mycanvas.mousemove(function(e) {
-    //     console.log("tada");
-    //     mouse.x = e.pageX - this.offsetLeft;
-    //     mouse.y = e.pageY - this.offsetTop;
-    // });
-    //
-    // /* Drawing on Paint App */
-    // ctx.lineWidth = widthLine;
-    // ctx.lineJoin = 'round';
-    // ctx.lineCap = 'round';
-    // ctx.strokeStyle = color;
-    //
-    // mycanvas.mousedown(function(e) {
-    //     console.log("tada");
-    //     ctx.beginPath();
-    //     ctx.moveTo(mouse.x, mouse.y);
-    //
-    //     mycanvas.mousemove( onPaint);
-    // });
-    //
-    // mycanvas.mouseup( function() {
-    //     // mycanvas.mousemove( onPaint);
-    // });
-    //
-    // var onPaint = function() {
-    //     ctx.lineTo(mouse.x, mouse.y);
-    //     ctx.stroke();
-    // }
-
-    // mycanvas.mousemove(function(e){
-    //     if(e.which==1) {
-    //
-    //         var ctx = mycanvas[0].getContext("2d");
-    //         ctx.fillStyle=color;
-    //         ctx.beginPath();
-    //         ctx.lineJoin = 'round';
-    //         ctx.lineCap = 'round';
-    //         ctx.fillRect( e.pageX  - this.offsetLeft , e.pageY - this.offsetTop, 1.5, 1.5);
-    //         ctx.closePath();
-    //     }
-    //     x = e.pageX  - this.offsetLeft ;
-    //     y = e.pageY - this.offsetTop ;
-    // });
-
-
-
-
-    // mycanvas.mousedown(function(event){
-    //     console.log(event);
-    //     timeout = setInterval(function(){
-    //
-    //         mycanvas.mousemove(function( event ) {
-    //             var pageCoords = "( " + event.pageX + ", " + event.pageY + " )";
-    //             var clientCoords = "( " + event.clientX + ", " + event.clientY + " )";
-    //             console.log( "( event.pageX, event.pageY ) : " + pageCoords );
-    //             console.log( "( event.clientX, event.clientY ) : " + clientCoords );
-    //         });
-    //
-    //         // console.log(x+" "+y);
-    //         console.log(count++);
-    //     }, 100);
-    //
-    //     return false;
-    // });
-    // $(document).mouseup(function(){
-    //     clearInterval(timeout);
-    //     return false;
-    // });
-
-
-
+    mycanvas.mouseup( function() {
+        if(action == "Onpen()" || action == "Ongomme()" ) {
+            allowed = false;
+        }
+    });
 
 });

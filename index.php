@@ -40,17 +40,8 @@
                         <li><input id="size"  type="range" value="5" max="30" min="1"/></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Link</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
-                            </ul>
-                        </li>
+                        <li id="reset"><button type="button" class="btn btn-danger ">Reset</button></li>
+                        <li ><a id="save" type="button" class="btn btn-info ">Save</a></li>
                     </ul>
                 </div>
             </div>
@@ -60,6 +51,8 @@
             <h2>Paint</h2>
 
             <canvas id="mycanvas" width="800" height="600" ></canvas>
+            
+            <img id="img"/>
         </div>
         <script src="js/scripts.js"></script>
     </body>

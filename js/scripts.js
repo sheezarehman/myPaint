@@ -21,6 +21,20 @@ $( document ).ready(function() {
         mycanvas.css("cursor", "crosshair");
     });
 
+    $('#reset').click( function(){
+        ctx.clearRect(0, 0, 800, 600);
+    });
+
+    $('#save').click( function(){
+            downloadCanvas(this, 'mycanvas', 'test2.png');
+    });
+    function downloadCanvas(link, canvasId, filename) {
+        console.log(link);
+        link.href = document.getElementById(canvasId).toDataURL();
+        link.download = filename;
+        console.log()
+    }
+
     $( "#color" ).change(function() {
         console.log("old :"+color+ "new :"+$( "#color" ).val() );
         color = $( "#color" ).val();
@@ -47,6 +61,7 @@ $( document ).ready(function() {
         $(this ).addClass( "active" );
         ctx.globalCompositeOperation="source-over";
     });
+
 
 
 

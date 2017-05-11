@@ -12,10 +12,9 @@ $( document ).ready(function() {
     ctx.strokeStyle = color;
     var action = "Online()";
     var allowed=false;
-
-
-
     var count=0;
+
+
 
     mycanvas.click(function( event ) {
         mycanvas.css("cursor", "crosshair");
@@ -24,16 +23,6 @@ $( document ).ready(function() {
     $('#reset').click( function(){
         ctx.clearRect(0, 0, 800, 600);
     });
-
-    $('#save').click( function(){
-            downloadCanvas(this, 'mycanvas', 'test2.png');
-    });
-    function downloadCanvas(link, canvasId, filename) {
-        console.log(link);
-        link.href = document.getElementById(canvasId).toDataURL();
-        link.download = filename;
-        console.log()
-    }
 
     $( "#color" ).change(function() {
         console.log("old :"+color+ "new :"+$( "#color" ).val() );
@@ -63,6 +52,17 @@ $( document ).ready(function() {
     });
 
 
+    $('#save').click( function(){
+        downloadCanvas(this, 'mycanvas', 'myCanvas.png');
+    });
+
+
+    function downloadCanvas(link, canvasId, filename) {
+        console.log(link);
+        link.href = document.getElementById(canvasId).toDataURL();
+        link.download = filename;
+        console.log()
+    }
 
 
     mycanvas.click(function(e) {

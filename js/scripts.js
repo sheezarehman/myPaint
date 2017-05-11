@@ -1,7 +1,6 @@
 $( document ).ready(function() {
     var mycanvas = $('#mycanvas');
 
-    var timeout
     var count = 0;
     var color="#000000";
     var filled = "true";
@@ -14,7 +13,6 @@ $( document ).ready(function() {
     var action = "Online()";
     var count=0;
 
-    console.log("kjbkjbn");
 
 
     mycanvas.click(function( event ) {
@@ -43,9 +41,15 @@ $( document ).ready(function() {
         console.log($(this).attr('id'));
         count=0;
         action = "On"+$(this).attr('id')+"()";
-        // ctx.globalCompositeOperation = "source-over";
+
+        $( ".tools" ).each(function( index ) {
+                $(this).removeClass( "active");
+        });
+        $(this ).addClass( "active" );
 
     });
+
+
 
     mycanvas.click(function(e) {
         mouse.x = e.pageX - this.offsetLeft;
@@ -87,7 +91,6 @@ $( document ).ready(function() {
             ctx.stroke();
             count=0;
         }
-
     }
 
     function Onrectangle(){
@@ -106,7 +109,6 @@ $( document ).ready(function() {
             }
             count=0;
         }
-
     }
 
 

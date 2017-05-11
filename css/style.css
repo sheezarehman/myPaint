@@ -46,3 +46,9 @@ body{
 .navbar-nav li{
     margin: 15px;
 }
+.active{
+    border-radius: 20px;
+    border:4px solid rgba(220,20,60, 0.9);
+    height: 41px;
+    width: 41px;
+}

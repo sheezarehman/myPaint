@@ -25,10 +25,10 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li  id="pen" class="  tools icons pen" title="pen"></li>
-                        <li  id="gomme" class="active  tools icons eraser" title="gomme"></li>
-                        <li  id="line" class="active  tools icons line" title="draw line"></li>
-                        <li id="circle" class="active  tools icons circle" title="draw circle"></li>
-                        <li  id="rectangle" class="active  tools icons rectangle" title="draw rectangle"></li>
+                        <li  id="gomme" class="  tools icons eraser" title="gomme"></li>
+                        <li  id="line" class=" active tools icons line" title="draw line"></li>
+                        <li id="circle" class="  tools icons circle" title="draw circle"></li>
+                        <li  id="rectangle" class="  tools icons rectangle" title="draw rectangle"></li>
                         <li class="dropdown">
                             <select class="form-control" id="filled">
                                 <option value="true">rempli</option>
@@ -37,7 +37,7 @@
                         </li>
 
                         <li ><input type="color" name="favcolor" id="color"/></li>
-                        <li><input id="size"  type="range" value="15" max="30" min="1"/></li>
+                        <li><input id="size"  type="range" value="5" max="30" min="1"/></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#">Link</a></li>

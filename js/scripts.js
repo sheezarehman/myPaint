@@ -1,7 +1,5 @@
 $( document ).ready(function() {
     var mycanvas = $('#mycanvas');
-
-    var count = 0;
     var color="#000000";
     var filled = "true";
     var widthLine=5;
@@ -14,8 +12,6 @@ $( document ).ready(function() {
     var allowed=false;
     var count=0;
     var fileImage;
-
-
 
     mycanvas.click(function( event ) {
         mycanvas.css("cursor", "crosshair");
@@ -38,7 +34,6 @@ $( document ).ready(function() {
     $( "#filled" ).change(function() {
         filled = $( "#filled" ).val();
     });
-
 
     $( "#file" ).change(function(event) {
         input = document.getElementById('file');

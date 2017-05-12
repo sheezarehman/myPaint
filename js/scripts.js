@@ -35,7 +35,34 @@ $( document ).ready(function() {
         filled = $( "#filled" ).val();
     });
 
-    $( "#file" ).change(function(event) {
+    $("#mycanvas").on("drop", function(e) {
+        e.preventDefault();
+        $(this).addClass( "dropzone" );
+        $(this).removeClass('dragover');
+        file = e.originalEvent.dataTransfer.files[0];
+        var extenstion = file.name.split('.').pop();
+        if(extenstion== "png" || extenstion ==  "jpeg"){
+            console.log(file.name.split('.').pop());
+            fr = new FileReader();
+            fr.onload = createImage;
+            fr.readAsDataURL(file);
+        }else {
+            alert('not the right format');
+        }
+
+    });
+
+
+    $("#mycanvas").on("dragover", function() {
+        $(this).addClass('dragover');
+        return false
+    });
+
+    $("#mycanvas").on("dragleave", function() {
+        $(this).removeClass('dragover');
+        return false;
+    });
+    $( "#file" ).change(function() {
         input = document.getElementById('file');
         file = input.files[0];
         var extenstion = file.name.split('.').pop();

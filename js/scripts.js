@@ -29,6 +29,11 @@ $( document ).ready(function() {
         ctx.fillStyle = $(this).val();
     });
 
+    $(".mini").click( function(){
+        color =  $(this).attr("id");
+        ctx.strokeStyle = $(this).attr("id");
+        ctx.fillStyle = $(this).attr("id");
+    });
 
     $( "#more" ).click(function() {
         $( "#more2" ).toggle();
@@ -121,6 +126,8 @@ $( document ).ready(function() {
         $(this ).addClass( "active" );
         ctx.globalCompositeOperation="source-over";
     });
+
+
 
     $("#save").click( function(){
         downloadCanvas(this, "mycanvas", "myCanvas.png");

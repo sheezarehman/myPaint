@@ -68,7 +68,7 @@
                                 </tr>
                             </table>
                         </li>
-                        <li  id="colors" class="colors" title="colors">
+                        <li  id="colors2" class="colors" title="colors">
                             <table>
                                 <tr>
                                     <td class="mini" id="#99ff33"></td>
@@ -95,13 +95,12 @@
                         <li  id="hslLI" class="rgb" title="rgb input">
                             <div class="form-group">
                                 <input type="text" class="form-control" id="hsl" placeholder="hsl(14, 100%, 25%)">
-                            </div>
-                 class="mini"        </li>
+                            </div></li>
 
-                        <li ><a id="saveColor" type="button" class="btn btn-info ">Save Color</a></li>
+<!--                        <li ><a id="saveColor" type="button" class="btn btn-info ">Save Color</a></li>-->
                     </ul>
                 </div>
-      class="mini"       </div>
+            </div>
 
         </nav>
 
@@ -109,16 +108,16 @@
         <label class="custom-file pull-right" >
             <input type="file" id="file" class="custom-file-input">
             <span class="custom-file-control"></span>
-     class="mini"    </label>
+        </label>
 
         <div id ="main" >
             <h2>Paint</h2>
 
-      class="mini"        <canvas id="mycanvas" width="800" height="600" ></canvas>
+             <canvas id="mycanvas" width="800" height="600" ></canvas>
             
             <img id="image"/>
 
         </div>
-     class="mini"    <script src="js/scripts.js"></script>
+        <script src="js/scripts.js"></script>
     </body>
 </html>

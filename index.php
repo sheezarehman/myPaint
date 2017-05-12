@@ -42,7 +42,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li id="more"><button type="button" class="btn btn-primary">More options</button></li>
                         <li id="reset"><button type="button" class="btn btn-danger ">Reset</button></li>
-                        <li ><a id="save" type="button" class="btn btn-info ">Save</a></li>
+                        <li ><a id="save"  class="btn btn-info ">Save</a></li>
                         <li></li>
                     </ul>
                 </div>

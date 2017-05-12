@@ -1,29 +1,51 @@
 $( document ).ready(function() {
-    var mycanvas = $('#mycanvas');
+    var mycanvas = $("#mycanvas");
     var color="#000000";
     var filled = "true";
     var widthLine=5;
     var mouse = {x: 0, y: 0};
     var saved={x: 0, y: 0};
-    var ctx = mycanvas[0].getContext('2d');
+    var ctx = mycanvas[0].getContext("2d");
     ctx.lineWidth = widthLine;
     ctx.strokeStyle = color;
     var action = "Online()";
     var allowed=false;
     var count=0;
-    var fileImage;
+    var file , fr , img;
+
+
+
+
+
+    $("#rgb").on("change", function () {
+        color =  $(this).val();
+        ctx.strokeStyle = $(this).val();
+        ctx.fillStyle = $(this).val();
+    });
+
+    $("#hsl").on("change", function () {
+        color =  $(this).val();
+        ctx.strokeStyle = $(this).val();
+        ctx.fillStyle = $(this).val();
+    });
+
+
+    $( "#more" ).click(function() {
+        $( "#more2" ).toggle();
+    });
 
     mycanvas.click(function( event ) {
         mycanvas.css("cursor", "crosshair");
     });
 
-    $('#reset').click( function(){
+    $("#reset").click( function(){
         ctx.clearRect(0, 0, 800, 600);
     });
 
     $( "#color" ).change(function() {
         color = $( "#color" ).val();
         ctx.strokeStyle = $( "#color" ).val();
+        ctx.fillStyle = $(this).val();
     });
 
     $( "#size" ).change(function() {
@@ -38,41 +60,39 @@ $( document ).ready(function() {
     $("#mycanvas").on("drop", function(e) {
         e.preventDefault();
         $(this).addClass( "dropzone" );
-        $(this).removeClass('dragover');
+        $(this).removeClass("dragover");
         file = e.originalEvent.dataTransfer.files[0];
-        var extenstion = file.name.split('.').pop();
-        if(extenstion== "png" || extenstion ==  "jpeg"){
-            console.log(file.name.split('.').pop());
+        var extenstion = file.name.split(".").pop();
+        if(extenstion== "png" || extenstion== "PNG"  || extenstion ==  "jpeg"){
+            console.log(file.name.split(".").pop());
             fr = new FileReader();
             fr.onload = createImage;
             fr.readAsDataURL(file);
         }else {
-            alert('not the right format');
+            alert("not the right format");
+            $("#mycanvas").val('');
         }
-
     });
 
-
     $("#mycanvas").on("dragover", function() {
-        $(this).addClass('dragover');
-        return false
+        return false;
     });
 
     $("#mycanvas").on("dragleave", function() {
-        $(this).removeClass('dragover');
         return false;
     });
     $( "#file" ).change(function() {
-        input = document.getElementById('file');
+        input = document.getElementById("file");
         file = input.files[0];
-        var extenstion = file.name.split('.').pop();
-        if(extenstion== "png" || extenstion ==  "jpeg"){
-            console.log(file.name.split('.').pop());
+        var extenstion = file.name.split(".").pop();
+        if(extenstion== "png"  || extenstion== "PNG"|| extenstion ==  "jpeg"){
+            console.log(file.name.split(".").pop());
             fr = new FileReader();
             fr.onload = createImage;
             fr.readAsDataURL(file);
         }else {
-            alert('not the right format');
+            alert("not the right format");
+            $("#mycanvas").val('');
         }
 
     });
@@ -83,14 +103,18 @@ $( document ).ready(function() {
     }
 
     function imageLoaded() {
-        var canvas = document.getElementById("mycanvas")
+        var canvas = document.getElementById("mycanvas");
         var ctx = canvas.getContext("2d");
-        ctx.drawImage(img,0,0 );
+        ctx.drawImage(img,0,0);
     }
+
+    $( "td" ).each(function( index ) {
+        $(this).css( "background-color" , $(this).attr("id"));
+    });
 
     $( ".tools" ).click(function(e) {
         count=0;
-        action = "On"+$(this).attr('id')+"()";
+        action = "On"+$(this).attr("id")+"()";
         $( ".tools" ).each(function( index ) {
                 $(this).removeClass( "active");
         });
@@ -98,8 +122,8 @@ $( document ).ready(function() {
         ctx.globalCompositeOperation="source-over";
     });
 
-    $('#save').click( function(){
-        downloadCanvas(this, 'mycanvas', 'myCanvas.png');
+    $("#save").click( function(){
+        downloadCanvas(this, "mycanvas", "myCanvas.png");
     });
 
     function downloadCanvas(link, canvasId, filename) {
@@ -171,7 +195,7 @@ $( document ).ready(function() {
     function Ongomme(){
         if (allowed == true && action == "Ongomme()"){
             ctx.globalCompositeOperation = "destination-out";
-            ctx.strokeStyle = 'rgba(0,0,0,1.0)';
+            ctx.strokeStyle = "rgba(0,0,0,1.0)";
             ctx.lineTo(mouse.x, mouse.y);
             ctx.stroke();
         }

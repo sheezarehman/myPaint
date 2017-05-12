@@ -57,7 +57,7 @@ body{
 #image{
     /*display: none;*/
 }
-#save{
+#save , #saveColor{
     color: floralwhite;
     padding-top: 5px;
     padding-bottom: 7px;
@@ -77,4 +77,23 @@ body{
     margin: 0 auto;
     border-color: #000;
     color: #000;
+}
+#more2{
+    background: rgba(1, 1, 1, 0.6);
+    height:80px ;
+    width: 900px;
+    margin-top: 15px;
+    /*display: none;*/
+}
+#mynav{
+    margin-top: -20px;
+}
+
+
+td{
+    border: 1.5px solid black;
+    /*margin: 20px;*/
+    height: 15px;
+    width: 15px;
+    display: inline-table;
 }

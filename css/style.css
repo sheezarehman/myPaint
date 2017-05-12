@@ -81,14 +81,19 @@ body{
 #more2{
     background: rgba(1, 1, 1, 0.6);
     height:80px ;
-    width: 900px;
+    width: 1050px;
     margin-top: 15px;
     /*display: none;*/
 }
 #mynav{
     margin-top: -20px;
 }
-
+.mini:hover{
+    cursor:pointer;
+}
+.navbar-nav li {
+    margin: 12px;
+}
 
 td{
     border: 1.5px solid black;

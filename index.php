@@ -52,23 +52,137 @@
                         <li  id="colors" class="colors" title="colors">
                             <table>
                                 <tr>
-                                    <td class="mini" id="#3333ff"></td>
-                                    <td class="mini" id="#0099ff"></td>
-                                    <td class="mini" id="#ccccff"></td>
+                                    <td class="mini" id="#b3ffff"></td>
+                                    <td class="mini" id="#00e6e6"></td>
+                                    <td class="mini" id="#004d4d"></td>
                                 </tr>
                                 <tr>
-                                    <td class="mini" id="#ff33cc"></td>
-                                    <td class="mini" id="#ff6699"></td>
-                                    <td class="mini" id="#ff0000"></td>
+                                    <td class="mini" id="#99ebff"></td>
+                                    <td class="mini" id="#00ccff"></td>
+                                    <td class="mini" id="#006680"></td>
                                 </tr>
                                 <tr>
-                                    <td class="mini" id="#ffff99"></td>
-                                    <td class="mini" id="#ff9900"></td>
-                                    <td class="mini" id="#ffff00"></td>
+                                    <td class="mini" id="#8cb3d9"></td>
+                                    <td class="mini" id="#336699"></td>
+                                    <td class="mini" id="#19334d"></td>
                                 </tr>
                             </table>
                         </li>
-                        <li  id="colors2" class="colors" title="colors">
+                        <li  id="colors2" class="colors" title="blue">
+                            <table>
+                                <tr>
+                                    <td class="mini" id="#809fff"></td>
+                                    <td class="mini" id="#0033cc"></td>
+                                    <td class="mini" id="#001a66"></td>
+                                </tr>
+                                <tr>
+                                    <td  class="mini" id="#99bbff"></td>
+                                    <td  class="mini" id="#1a66ff"></td>
+                                    <td  class="mini" id="#0044cc"></td>
+                                </tr>
+                                <tr>
+                                    <td class="mini" id="#8c8cd9"></td>
+                                    <td class="mini" id="#333399"></td>
+                                    <td class="mini" id="#19194d"></td>
+                                </tr>
+                            </table>
+                        </li>
+                        <li  id="colors3" class="colors" title="purple">
+                            <table>
+                                <tr>
+                                    <td class="mini" id="#b366ff"></td>
+                                    <td class="mini" id="#6600cc"></td>
+                                    <td class="mini" id="#330066"></td>
+                                </tr>
+                                <tr>
+                                    <td  class="mini" id="#dd99ff"></td>
+                                    <td  class="mini" id="#aa00ff"></td>
+                                    <td  class="mini" id="#660099"></td>
+                                </tr>
+                                <tr>
+                                    <td class="mini" id="#ff80df"></td>
+                                    <td class="mini" id="#e600ac"></td>
+                                    <td class="mini" id="#800060"></td>
+                                </tr>
+                            </table>
+                        </li>
+                        <li  id="colors4" class="colors" title="red">
+                            <table>
+                                <tr>
+                                    <td class="mini" id="#ff80b3"></td>
+                                    <td class="mini" id="#e6005c"></td>
+                                    <td class="mini" id="#800033"></td>
+                                </tr>
+                                <tr>
+                                    <td  class="mini" id="#800033"></td>
+                                    <td  class="mini" id="#ff1a1a"></td>
+                                    <td  class="mini" id="#990000"></td>
+                                </tr>
+                                <tr>
+                                    <td class="mini" id="#003366"></td>
+                                    <td class="mini" id="#003300"></td>
+                                    <td class="mini" id="#800000"></td>
+                                </tr>
+                            </table>
+                        </li>
+                        <li  id="colors5" class="colors" title="brown">
+                            <table>
+                                <tr>
+                                    <td class="mini" id="#99ff33"></td>
+                                    <td class="mini" id="#ccffcc"></td>
+                                    <td class="mini" id="#009900"></td>
+                                </tr>
+                                <tr>
+                                    <td  class="mini" id="#99ffcc"></td>
+                                    <td  class="mini" id="#00cc99"></td>
+                                    <td  class="mini" id="#006666"></td>
+                                </tr>
+                                <tr>
+                                    <td class="mini" id="#003366"></td>
+                                    <td class="mini" id="#003300"></td>
+                                    <td class="mini" id="#800000"></td>
+                                </tr>
+                            </table>
+                        </li>
+                        <li  id="colors6" class="colors" title="yellow">
+                            <table>
+                                <tr>
+                                    <td class="mini" id="#99ff33"></td>
+                                    <td class="mini" id="#ccffcc"></td>
+                                    <td class="mini" id="#009900"></td>
+                                </tr>
+                                <tr>
+                                    <td  class="mini" id="#99ffcc"></td>
+                                    <td  class="mini" id="#00cc99"></td>
+                                    <td  class="mini" id="#006666"></td>
+                                </tr>
+                                <tr>
+                                    <td class="mini" id="#003366"></td>
+                                    <td class="mini" id="#003300"></td>
+                                    <td class="mini" id="#800000"></td>
+                                </tr>
+                            </table>
+                        </li>
+                        <li  id="colors7" class="colors" title="green">
+                            <table>
+                                <tr>
+                                    <td class="mini" id="#99ff33"></td>
+                                    <td class="mini" id="#ccffcc"></td>
+                                    <td class="mini" id="#009900"></td>
+                                </tr>
+                                <tr>
+                                    <td  class="mini" id="#99ffcc"></td>
+                                    <td  class="mini" id="#00cc99"></td>
+                                    <td  class="mini" id="#006666"></td>
+                                </tr>
+                                <tr>
+                                    <td class="mini" id="#003366"></td>
+                                    <td class="mini" id="#003300"></td>
+                                    <td class="mini" id="#800000"></td>
+                                </tr>
+                            </table>
+                        </li>
+                        <li  id="colors8" class="colors" title="black">
                             <table>
                                 <tr>
                                     <td class="mini" id="#99ff33"></td>
@@ -91,7 +205,7 @@
                             <div class="form-group">
                                 <input type="text" class="form-control" id="rgb" placeholder="rgb(255,255,255)">
                             </div>
-                        </li>class="mini"
+                        </li>
                         <li  id="hslLI" class="rgb" title="rgb input">
                             <div class="form-group">
                                 <input type="text" class="form-control" id="hsl" placeholder="hsl(14, 100%, 25%)">
@@ -114,8 +228,7 @@
             <h2>Paint</h2>
 
              <canvas id="mycanvas" width="800" height="600" ></canvas>
-            
-            <img id="image"/>
+
 
         </div>
         <script src="js/scripts.js"></script>

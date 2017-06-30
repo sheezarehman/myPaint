@@ -12,11 +12,23 @@ $( document ).ready(function() {
     var allowed=false;
     var count=0;
     var file , fr , img;
+    var sym=false;
 
 
+    $("#sym_hor").click(function(){
+        console.log("tada");
+        var c = document.getElementById("mycanvas");
+        var context = c.getContext("2d");
+        ctx.strokeStyle = "red";
+        context.beginPath();
+        context.moveTo(400, 0);
+        context.lineTo(400, 600);
+        context.stroke();
+        sym=true;
+    });
 
 
-
+    /*_______Color Change _____*/
     $("#rgb").on("change", function () {
         color =  $(this).val();
         ctx.strokeStyle = $(this).val();
@@ -35,18 +47,6 @@ $( document ).ready(function() {
         ctx.fillStyle = $(this).attr("id");
     });
 
-    $( "#more" ).click(function() {
-        $( "#more2" ).toggle();
-    });
-
-    mycanvas.click(function( event ) {
-        mycanvas.css("cursor", "crosshair");
-    });
-
-    $("#reset").click( function(){
-        ctx.clearRect(0, 0, 800, 600);
-    });
-
     $( "#color" ).change(function() {
         color = $( "#color" ).val();
         ctx.strokeStyle = $( "#color" ).val();
@@ -60,6 +60,18 @@ $( document ).ready(function() {
 
     $( "#filled" ).change(function() {
         filled = $( "#filled" ).val();
+    });
+
+    $( "#more" ).click(function() {
+        $( "#more2" ).toggle();
+    });
+
+    mycanvas.click(function( event ) {
+        mycanvas.css("cursor", "crosshair");
+    });
+
+    $("#reset").click( function(){
+        ctx.clearRect(0, 0, 800, 600);
     });
 
     $("#mycanvas").on("drop", function(e) {
@@ -127,8 +139,6 @@ $( document ).ready(function() {
         ctx.globalCompositeOperation="source-over";
     });
 
-
-
     $("#save").click( function(){
         downloadCanvas(this, "mycanvas", "myCanvas.png");
     });
@@ -143,7 +153,13 @@ $( document ).ready(function() {
         mouse.x = e.pageX - this.offsetLeft;
         mouse.y = e.pageY - this.offsetTop;
         eval(action);
+        if (sym){
+            copyCanvas();
+        }
     });
+    function copyCanvas(){
+        
+    }
 
     function Online(){
         // ctx.strokeStyle =color;

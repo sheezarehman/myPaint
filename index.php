@@ -31,7 +31,7 @@
                         <li  id="rectangle" class="  tools icons rectangle" title="draw rectangle"></li>
                         <li class="dropdown">
                             <select class="form-control" id="filled">
-                                <option value="true">rempli</option>
+                                <option value="true" selected>rempli</option>
                                 <option value="false">vide</option>
                             </select>
                         </li>
@@ -211,7 +211,8 @@
                                 <input type="text" class="form-control" id="hsl" placeholder="hsl(14, 100%, 25%)">
                             </div></li>
 
-<!--                        <li ><a id="saveColor" type="button" class="btn btn-info ">Save Color</a></li>-->
+                        <li ><a id="sym_hor"  class="btn btn-success sym ">séparation horizontale</a></li>
+                        <li ><a id="sym_ver"  class="btn btn-primary sym ">verticale</a></li>
                     </ul>
                 </div>
             </div>
@@ -225,7 +226,7 @@
         </label>
 
         <div id ="main" >
-            <h2>Paint</h2>
+            <h1>Paint</h1>
 
              <canvas id="mycanvas" width="800" height="600" ></canvas>
 
